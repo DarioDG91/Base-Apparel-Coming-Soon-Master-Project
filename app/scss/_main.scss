@@ -1,0 +1,190 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+
+  .left {
+    width: 57.65%;
+    background-image: url("/images/bg-pattern-desktop.svg");
+    background-size: cover;
+    background-position: center center;
+    padding: 0 2rem;
+
+    @include md {
+      width: 100%;
+    }
+
+    .inner-container {
+      max-width: 27.8rem;
+      margin: auto;
+
+      .logo {
+        margin-top: 4.05rem;
+        margin-bottom: 5.535rem;
+        @include md {
+          width: 100px;
+          margin-top: 2rem;
+          margin-bottom: 1.8rem;
+          text-align: left;
+        }
+      }
+
+      .hero-mobile {
+        display: none;
+        @include md {
+          display: block;
+          margin-left: -40px;
+          width: calc(100% + 80px);
+        }
+      }
+
+      h1 {
+        text-transform: uppercase;
+        font-size: 3.9375rem;
+        letter-spacing: 1.125rem;
+        font-weight: 600;
+        color: $DarkGrayishRed;
+        line-height: 1.09;
+        margin-bottom: 1.125rem;
+
+        @include md {
+          font-size: 41px;
+          letter-spacing: 10px;
+          text-align: center;
+          line-height: 1.045;
+          margin-top: 4.15rem;
+          margin-bottom: 1rem;
+        }
+
+        span {
+          font-weight: 200;
+          color: $DesaturatedRed;
+        }
+      }
+
+      p {
+        color: $DesaturatedRed;
+        line-height: 28px;
+        margin-bottom: 2.5rem;
+        letter-spacing: 0.1px;
+        @include md {
+          text-align: center;
+          font-size: 13.5px;
+          letter-spacing: 0.5px;
+          line-height: 1.62;
+          margin-bottom: 2rem;
+        }
+      }
+
+      form {
+        position: relative;
+
+        input {
+          padding: 15px 23px;
+          font-size: 16px;
+          border-radius: 50px;
+          background-color: transparent;
+          border: 1px solid hsl(0, 36%, 70%, 0.5);
+          width: 100%;
+          height: 55px;
+
+          @include md {
+            height: 48px;
+          }
+
+          &::placeholder {
+            font-family: "Josefin Sans", sans-serif;
+            color: hsl(0, 36%, 70%, 0.5);
+            font-size: 14px;
+          }
+        }
+
+        button {
+          background-image: linear-gradient(
+            135deg,
+            hsl(0, 80%, 86%),
+            hsl(0, 74%, 74%)
+          );
+          border: none;
+          padding: 15px;
+          border-radius: 50px;
+          width: 100px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          transition: opacity 0.2s ease;
+          height: 55px;
+          box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 0.5);
+
+          @include md {
+            height: 48px;
+            width: 64px;
+          }
+
+          &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+          }
+        }
+
+        input:focus,
+        button:focus {
+          border-width: 2px;
+          outline: none;
+          box-shadow: 0px 0px 10px hsla(0, 36%, 70%, 0.5);
+        }
+
+        .error-icon {
+          display: none;
+          position: absolute;
+          top: 17px;
+          right: 115px;
+
+          @include md {
+            top: 12px;
+            right: 75px;
+          }
+        }
+
+        small {
+          display: none;
+          margin-top: 13px;
+          margin-left: 33px;
+          color: $SoftRed;
+        }
+      }
+
+      form.error {
+        input {
+          border: 2px solid $SoftRed;
+        }
+
+        .error-icon {
+          display: block;
+        }
+
+        small {
+          display: block;
+        }
+      }
+
+      form.succes {
+        input {
+          border: 2px solid $DesaturatedRed;
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 42.35%;
+    @include md {
+      display: none;
+    }
+  }
+
+  .desktop-img {
+    background-image: url("/images/hero-desktop.jpg");
+    background-size: cover;
+    background-position: center center;
+  }
+}
